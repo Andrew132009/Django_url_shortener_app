@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% if text %}
+        <title>{{ text.title }}</title>
+        <meta name="keywords" content="{{ text.keywords }}">
+        <meta name="description" content="{{ text.description }}">
+    {% else %}
+        <title>Сократитель ссылок</title>
+        <meta name="keywords", content="bit.ly, сократить ссылку, сокращение ссылок">
+        <meta name="description", content="Сервис сокращения ссылок. У нас бесплатно!">
+    {% endif %}
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}", type="text/css">
+</head>
+<body>
+<header>
+    The website header. Does not change. It is static
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    The bottom of the website. Does not change. It is static
+</footer>
+
+</body>
+</html>
